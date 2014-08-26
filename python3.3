@@ -1,0 +1,184 @@
+Downloading/unpacking pyspglib
+  Downloading pyspglib-1.6.0.13.tar.gz (140kB): 140kB downloaded
+  Running setup.py (path:/private/tmp/pip_build_root/pyspglib/setup.py) egg_info for package pyspglib
+    
+Requirement already satisfied (use --upgrade to upgrade): numpy in /opt/local/Library/Frameworks/Python.framework/Versions/3.3/lib/python3.3/site-packages (from pyspglib)
+Installing collected packages: pyspglib
+  Running setup.py install for pyspglib
+    building 'pyspglib._spglib' extension
+    C compiler: gcc -Wno-unused-result -fno-common -dynamic -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -pipe -Os
+    
+    compile options: '-Isrc -I/opt/local/Library/Frameworks/Python.framework/Versions/3.3/lib/python3.3/site-packages/numpy/core/include -I/opt/local/Library/Frameworks/Python.framework/Versions/3.3/include/python3.3m -c'
+    extra options: '-fopenmp'
+    gcc: src/primitive.c
+    src/primitive.c: In function 'get_primitive':
+    src/primitive.c:469:8: warning: 'num_overlap' may be used uninitialized in this function [-Wmaybe-uninitialized]
+         if (num_overlap < ratio) {
+            ^
+    src/primitive.c:438:22: note: 'num_overlap' was declared here
+       int i, j, attempt, num_overlap, ratio;
+                          ^
+    gcc: src/sitesym_database.c
+    gcc: src/spin.c
+    gcc: src/kpoint.c
+    src/kpoint.c:379:12: warning: 'get_ir_reciprocal_mesh' defined but not used [-Wunused-function]
+     static int get_ir_reciprocal_mesh(int grid_address[][3],
+                ^
+    gcc: _spglib.c
+    In file included from /opt/local/Library/Frameworks/Python.framework/Versions/3.3/lib/python3.3/site-packages/numpy/core/include/numpy/ndarraytypes.h:1760:0,
+                     from /opt/local/Library/Frameworks/Python.framework/Versions/3.3/lib/python3.3/site-packages/numpy/core/include/numpy/ndarrayobject.h:17,
+                     from /opt/local/Library/Frameworks/Python.framework/Versions/3.3/lib/python3.3/site-packages/numpy/core/include/numpy/arrayobject.h:4,
+                     from _spglib.c:3:
+    /opt/local/Library/Frameworks/Python.framework/Versions/3.3/lib/python3.3/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: #warning "Using deprecated NumPy API, disable it by " "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+     #warning "Using deprecated NumPy API, disable it by " \
+      ^
+    _spglib.c: In function 'init_spglib':
+    _spglib.c:63:3: warning: implicit declaration of function 'Py_InitModule3' [-Wimplicit-function-declaration]
+       Py_InitModule3("_spglib", functions, "C-extension for spglib\n\n...\n");
+       ^
+    _spglib.c:64:3: warning: 'return' with no value, in function returning non-void [-Wreturn-type]
+       return;
+       ^
+    _spglib.c: In function 'get_dataset':
+    _spglib.c:101:3: warning: implicit declaration of function 'PyInt_FromLong' [-Wimplicit-function-declaration]
+       PyList_SetItem(array, 0, PyInt_FromLong((long) dataset->spacegroup_number));
+       ^
+    _spglib.c:101:3: warning: passing argument 3 of 'PyList_SetItem' makes pointer from integer without a cast [enabled by default]
+    In file included from /opt/local/Library/Frameworks/Python.framework/Versions/3.3/include/python3.3m/Python.h:85:0,
+                     from _spglib.c:1:
+    /opt/local/Library/Frameworks/Python.framework/Versions/3.3/include/python3.3m/listobject.h:55:17: note: expected 'struct PyObject *' but argument is of type 'int'
+     PyAPI_FUNC(int) PyList_SetItem(PyObject *, Py_ssize_t, PyObject *);
+                     ^
+    _spglib.c:102:3: warning: implicit declaration of function 'PyString_FromString' [-Wimplicit-function-declaration]
+       PyList_SetItem(array, 1, PyString_FromString(dataset->international_symbol));
+       ^
+    _spglib.c:102:3: warning: passing argument 3 of 'PyList_SetItem' makes pointer from integer without a cast [enabled by default]
+    In file included from /opt/local/Library/Frameworks/Python.framework/Versions/3.3/include/python3.3m/Python.h:85:0,
+                     from _spglib.c:1:
+    /opt/local/Library/Frameworks/Python.framework/Versions/3.3/include/python3.3m/listobject.h:55:17: note: expected 'struct PyObject *' but argument is of type 'int'
+     PyAPI_FUNC(int) PyList_SetItem(PyObject *, Py_ssize_t, PyObject *);
+                     ^
+    _spglib.c:103:3: warning: passing argument 3 of 'PyList_SetItem' makes pointer from integer without a cast [enabled by default]
+       PyList_SetItem(array, 2, PyString_FromString(dataset->hall_symbol));
+       ^
+    In file included from /opt/local/Library/Frameworks/Python.framework/Versions/3.3/include/python3.3m/Python.h:85:0,
+                     from _spglib.c:1:
+    /opt/local/Library/Frameworks/Python.framework/Versions/3.3/include/python3.3m/listobject.h:55:17: note: expected 'struct PyObject *' but argument is of type 'int'
+     PyAPI_FUNC(int) PyList_SetItem(PyObject *, Py_ssize_t, PyObject *);
+                     ^
+    _spglib.c:130:2: warning: passing argument 3 of 'PyList_SetItem' makes pointer from integer without a cast [enabled by default]
+      PyList_SetItem(vec, k, PyInt_FromLong((long) dataset->rotations[i][j][k]));
+      ^
+    In file included from /opt/local/Library/Frameworks/Python.framework/Versions/3.3/include/python3.3m/Python.h:85:0,
+                     from _spglib.c:1:
+    /opt/local/Library/Frameworks/Python.framework/Versions/3.3/include/python3.3m/listobject.h:55:17: note: expected 'struct PyObject *' but argument is of type 'int'
+     PyAPI_FUNC(int) PyList_SetItem(PyObject *, Py_ssize_t, PyObject *);
+                     ^
+    _spglib.c:153:5: warning: passing argument 3 of 'PyList_SetItem' makes pointer from integer without a cast [enabled by default]
+         PyList_SetItem(wyckoffs, i, PyInt_FromLong((long) dataset->wyckoffs[i]));
+         ^
+    In file included from /opt/local/Library/Frameworks/Python.framework/Versions/3.3/include/python3.3m/Python.h:85:0,
+                     from _spglib.c:1:
+    /opt/local/Library/Frameworks/Python.framework/Versions/3.3/include/python3.3m/listobject.h:55:17: note: expected 'struct PyObject *' but argument is of type 'int'
+     PyAPI_FUNC(int) PyList_SetItem(PyObject *, Py_ssize_t, PyObject *);
+                     ^
+    _spglib.c:154:5: warning: passing argument 3 of 'PyList_SetItem' makes pointer from integer without a cast [enabled by default]
+         PyList_SetItem(equiv_atoms, i, PyInt_FromLong((long) dataset->equivalent_atoms[i]));
+         ^
+    In file included from /opt/local/Library/Frameworks/Python.framework/Versions/3.3/include/python3.3m/Python.h:85:0,
+                     from _spglib.c:1:
+    /opt/local/Library/Frameworks/Python.framework/Versions/3.3/include/python3.3m/listobject.h:55:17: note: expected 'struct PyObject *' but argument is of type 'int'
+     PyAPI_FUNC(int) PyList_SetItem(PyObject *, Py_ssize_t, PyObject *);
+                     ^
+    _spglib.c: In function 'get_spacegroup':
+    _spglib.c:193:3: warning: return makes pointer from integer without a cast [enabled by default]
+       return PyString_FromString(symbol);
+       ^
+    _spglib.c: In function 'get_pointgroup':
+    _spglib.c:217:7: warning: passing argument 3 of 'PyList_SetItem' makes pointer from integer without a cast [enabled by default]
+           PyList_SetItem(vec, j, PyInt_FromLong((long)trans_mat[i][j]));
+           ^
+    In file included from /opt/local/Library/Frameworks/Python.framework/Versions/3.3/include/python3.3m/Python.h:85:0,
+                     from _spglib.c:1:
+    /opt/local/Library/Frameworks/Python.framework/Versions/3.3/include/python3.3m/listobject.h:55:17: note: expected 'struct PyObject *' but argument is of type 'int'
+     PyAPI_FUNC(int) PyList_SetItem(PyObject *, Py_ssize_t, PyObject *);
+                     ^
+    _spglib.c:223:3: warning: passing argument 3 of 'PyList_SetItem' makes pointer from integer without a cast [enabled by default]
+       PyList_SetItem(array, 0, PyString_FromString(symbol));
+       ^
+    In file included from /opt/local/Library/Frameworks/Python.framework/Versions/3.3/include/python3.3m/Python.h:85:0,
+                     from _spglib.c:1:
+    /opt/local/Library/Frameworks/Python.framework/Versions/3.3/include/python3.3m/listobject.h:55:17: note: expected 'struct PyObject *' but argument is of type 'int'
+     PyAPI_FUNC(int) PyList_SetItem(PyObject *, Py_ssize_t, PyObject *);
+                     ^
+    _spglib.c:224:3: warning: passing argument 3 of 'PyList_SetItem' makes pointer from integer without a cast [enabled by default]
+       PyList_SetItem(array, 1, PyInt_FromLong((long) ptg_num));
+       ^
+    In file included from /opt/local/Library/Frameworks/Python.framework/Versions/3.3/include/python3.3m/Python.h:85:0,
+                     from _spglib.c:1:
+    /opt/local/Library/Frameworks/Python.framework/Versions/3.3/include/python3.3m/listobject.h:55:17: note: expected 'struct PyObject *' but argument is of type 'int'
+     PyAPI_FUNC(int) PyList_SetItem(PyObject *, Py_ssize_t, PyObject *);
+                     ^
+    _spglib.c: In function 'refine_cell':
+    _spglib.c:258:3: warning: return makes pointer from integer without a cast [enabled by default]
+       return PyInt_FromLong((long) num_atom_brv);
+       ^
+    _spglib.c: In function 'find_primitive':
+    _spglib.c:289:3: warning: return makes pointer from integer without a cast [enabled by default]
+       return PyInt_FromLong((long) num_atom_prim);
+       ^
+    _spglib.c: In function 'get_symmetry':
+    _spglib.c:329:3: warning: return makes pointer from integer without a cast [enabled by default]
+       return PyInt_FromLong((long) num_sym);
+       ^
+    _spglib.c: In function 'get_symmetry_with_collinear_spin':
+    _spglib.c:375:3: warning: return makes pointer from integer without a cast [enabled by default]
+       return PyInt_FromLong((long) num_sym);
+       ^
+    _spglib.c: In function 'get_ir_reciprocal_mesh':
+    _spglib.c:422:3: warning: return makes pointer from integer without a cast [enabled by default]
+       return PyInt_FromLong((long) num_ir);
+       ^
+    _spglib.c: In function 'get_stabilized_reciprocal_mesh':
+    _spglib.c:464:3: warning: return makes pointer from integer without a cast [enabled by default]
+       return PyInt_FromLong((long) num_ir);
+       ^
+    _spglib.c: In function 'relocate_BZ_grid_address':
+    _spglib.c:501:3: warning: return makes pointer from integer without a cast [enabled by default]
+       return PyInt_FromLong((long) num_ir_gp);
+       ^
+    _spglib.c: In function 'get_triplets_reciprocal_mesh_at_q':
+    _spglib.c:541:3: warning: return makes pointer from integer without a cast [enabled by default]
+       return PyInt_FromLong((long) num_ir);
+       ^
+    _spglib.c: In function 'get_BZ_triplets_at_q':
+    _spglib.c:577:3: warning: return makes pointer from integer without a cast [enabled by default]
+       return PyInt_FromLong((long) num_ir);
+       ^
+    In file included from /opt/local/Library/Frameworks/Python.framework/Versions/3.3/lib/python3.3/site-packages/numpy/core/include/numpy/ndarrayobject.h:26:0,
+                     from /opt/local/Library/Frameworks/Python.framework/Versions/3.3/lib/python3.3/site-packages/numpy/core/include/numpy/arrayobject.h:4,
+                     from _spglib.c:3:
+    _spglib.c: At top level:
+    /opt/local/Library/Frameworks/Python.framework/Versions/3.3/lib/python3.3/site-packages/numpy/core/include/numpy/__multiarray_api.h:1629:1: warning: '_import_array' defined but not used [-Wunused-function]
+     _import_array(void)
+     ^
+    gcc: src/site_symmetry.c
+    gcc: src/spg_database.c
+    gcc: src/tetrahedron_method.c
+    gcc: src/hall_symbol.c
+    gcc: src/mathfunc.c
+    gcc: src/spacegroup.c
+    gcc: src/symmetry.c
+    gcc: src/spglib.c
+    src/spglib.c:753:12: warning: 'get_symmetry' defined but not used [-Wunused-function]
+     static int get_symmetry(int rotation[][3][3],
+                ^
+    gcc: src/cell.c
+    gcc: src/lattice.c
+    gcc: src/pointgroup.c
+    gcc: src/debug.c
+    gcc: src/refinement.c
+    gcc -bundle -undefined dynamic_lookup -L/opt/local/lib -Wl,-headerpad_max_install_names -arch x86_64 build/temp.macosx-10.9-x86_64-3.3/_spglib.o build/temp.macosx-10.9-x86_64-3.3/src/cell.o build/temp.macosx-10.9-x86_64-3.3/src/debug.o build/temp.macosx-10.9-x86_64-3.3/src/hall_symbol.o build/temp.macosx-10.9-x86_64-3.3/src/kpoint.o build/temp.macosx-10.9-x86_64-3.3/src/lattice.o build/temp.macosx-10.9-x86_64-3.3/src/mathfunc.o build/temp.macosx-10.9-x86_64-3.3/src/pointgroup.o build/temp.macosx-10.9-x86_64-3.3/src/primitive.o build/temp.macosx-10.9-x86_64-3.3/src/refinement.o build/temp.macosx-10.9-x86_64-3.3/src/sitesym_database.o build/temp.macosx-10.9-x86_64-3.3/src/site_symmetry.o build/temp.macosx-10.9-x86_64-3.3/src/spacegroup.o build/temp.macosx-10.9-x86_64-3.3/src/spin.o build/temp.macosx-10.9-x86_64-3.3/src/spg_database.o build/temp.macosx-10.9-x86_64-3.3/src/spglib.o build/temp.macosx-10.9-x86_64-3.3/src/symmetry.o build/temp.macosx-10.9-x86_64-3.3/src/tetrahedron_method.o -o build/lib.macosx-10.9-x86_64-3.3/pyspglib/_spglib.so -lgomp
+    
+Successfully installed pyspglib
+Cleaning up...

@@ -1,0 +1,71 @@
+Downloading/unpacking pyspglib
+  Downloading pyspglib-1.6.0.13.tar.gz (140kB): 140kB downloaded
+  Running setup.py (path:/private/tmp/pip_build_root/pyspglib/setup.py) egg_info for package pyspglib
+    
+Requirement already satisfied (use --upgrade to upgrade): numpy in /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages (from pyspglib)
+Installing collected packages: pyspglib
+  Running setup.py install for pyspglib
+    building 'pyspglib._spglib' extension
+    C compiler: gcc -fno-strict-aliasing -fno-common -dynamic -pipe -Os -fwrapv -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes
+    
+    compile options: '-Isrc -I/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/numpy/core/include -I/opt/local/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c'
+    extra options: '-fopenmp'
+    gcc: _spglib.c
+    In file included from /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/numpy/core/include/numpy/ndarraytypes.h:1761:0,
+                     from /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:17,
+                     from /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/numpy/core/include/numpy/arrayobject.h:4,
+                     from _spglib.c:3:
+    /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: #warning "Using deprecated NumPy API, disable it by " "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+     #warning "Using deprecated NumPy API, disable it by " \
+      ^
+    In file included from /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:26:0,
+                     from /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/numpy/core/include/numpy/arrayobject.h:4,
+                     from _spglib.c:3:
+    /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/numpy/core/include/numpy/__multiarray_api.h:1629:1: warning: '_import_array' defined but not used [-Wunused-function]
+     _import_array(void)
+     ^
+    gcc: src/pointgroup.c
+    src/pointgroup.c: In function 'laue_one_axis.constprop.0':
+    src/pointgroup.c:1214:43: warning: 'tmp_axes[1]' may be used uninitialized in this function [-Wmaybe-uninitialized]
+           tmat[i][j] = s[j] * rot_axes[axes[j]%NUM_ROT_AXES][i];
+                                               ^
+    src/pointgroup.c:1016:20: note: 'tmp_axes[1]' was declared here
+       int axis_vec[3], tmp_axes[3];
+                        ^
+    src/pointgroup.c: In function 'laue_one_axis':
+    src/pointgroup.c:1214:43: warning: 'tmp_axes[1]' may be used uninitialized in this function [-Wmaybe-uninitialized]
+           tmat[i][j] = s[j] * rot_axes[axes[j]%NUM_ROT_AXES][i];
+                                               ^
+    src/pointgroup.c:1016:20: note: 'tmp_axes[1]' was declared here
+       int axis_vec[3], tmp_axes[3];
+                        ^
+    gcc: src/site_symmetry.c
+    gcc: src/spg_database.c
+    gcc: src/sitesym_database.c
+    gcc: src/debug.c
+    gcc: src/refinement.c
+    gcc: src/cell.c
+    gcc: src/hall_symbol.c
+    gcc: src/mathfunc.c
+    gcc: src/spacegroup.c
+    src/spacegroup.c: In function 'get_spacegroup':
+    src/spacegroup.c:132:26: warning: 'centering' may be used uninitialized in this function [-Wmaybe-uninitialized]
+         spacegroup.centering = centering;
+                              ^
+    gcc: src/spglib.c
+    src/spglib.c:753:12: warning: 'get_symmetry' defined but not used [-Wunused-function]
+     static int get_symmetry(int rotation[][3][3],
+                ^
+    gcc: src/tetrahedron_method.c
+    gcc: src/spin.c
+    gcc: src/kpoint.c
+    src/kpoint.c:379:12: warning: 'get_ir_reciprocal_mesh' defined but not used [-Wunused-function]
+     static int get_ir_reciprocal_mesh(int grid_address[][3],
+                ^
+    gcc: src/symmetry.c
+    gcc: src/primitive.c
+    gcc: src/lattice.c
+    gcc -bundle -undefined dynamic_lookup -L/opt/local/lib -Wl,-headerpad_max_install_names -L/opt/local/lib/db46 -arch x86_64 build/temp.macosx-10.9-x86_64-2.7/_spglib.o build/temp.macosx-10.9-x86_64-2.7/src/cell.o build/temp.macosx-10.9-x86_64-2.7/src/debug.o build/temp.macosx-10.9-x86_64-2.7/src/hall_symbol.o build/temp.macosx-10.9-x86_64-2.7/src/kpoint.o build/temp.macosx-10.9-x86_64-2.7/src/lattice.o build/temp.macosx-10.9-x86_64-2.7/src/mathfunc.o build/temp.macosx-10.9-x86_64-2.7/src/pointgroup.o build/temp.macosx-10.9-x86_64-2.7/src/primitive.o build/temp.macosx-10.9-x86_64-2.7/src/refinement.o build/temp.macosx-10.9-x86_64-2.7/src/sitesym_database.o build/temp.macosx-10.9-x86_64-2.7/src/site_symmetry.o build/temp.macosx-10.9-x86_64-2.7/src/spacegroup.o build/temp.macosx-10.9-x86_64-2.7/src/spin.o build/temp.macosx-10.9-x86_64-2.7/src/spg_database.o build/temp.macosx-10.9-x86_64-2.7/src/spglib.o build/temp.macosx-10.9-x86_64-2.7/src/symmetry.o build/temp.macosx-10.9-x86_64-2.7/src/tetrahedron_method.o -o build/lib.macosx-10.9-x86_64-2.7/pyspglib/_spglib.so -lgomp
+    
+Successfully installed pyspglib
+Cleaning up...
